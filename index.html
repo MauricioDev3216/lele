@@ -62,9 +62,51 @@ footer{text-align:center;color:var(--muted);padding:2rem 1rem 3rem}
 #sky{width:100%;height:260px;border-radius:20px;background:linear-gradient(180deg,#2d1a58,#12082a);touch-action:manipulation;display:block}
 .spark{position:fixed;pointer-events:none;z-index:9;font-size:1.2rem;animation:up .9s forwards}
 @keyframes up{to{transform:translateY(-70px) scale(1.6);opacity:0}}
+
+#prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),#f0abfc);z-index:20}
+section{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}section.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){section{opacity:1;transform:none;transition:none}}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;align-items:start}
+.phone{width:min(300px,100%);margin:0 auto;border-radius:36px;padding:16px;background:#0b0618;border:3px solid #3b2670;box-shadow:0 20px 50px rgba(109,40,217,.45);color:#fff}
+.cover{aspect-ratio:1;border-radius:14px;background:conic-gradient(from 20deg,#6d28d9,#c084fc,#f0abfc,#6d28d9);display:flex;align-items:center;justify-content:center;font-size:4.5rem;margin-top:.5rem}
+.playing .cover{animation:bt 1.2s ease-in-out infinite}@keyframes bt{50%{transform:scale(1.04)}}
+.pb{height:5px;border-radius:9px;background:#3b2670;margin:.9rem 0 .3rem;overflow:hidden;cursor:pointer}.pb i{display:block;height:100%;width:0;background:#fff}
+.ctl{display:flex;justify-content:center;gap:1rem;align-items:center;margin-top:.5rem}
+.ctl button,#lk{background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer}
+.ctl .pp{background:#fff;color:#000;width:54px;height:54px;border-radius:50%}
+.eq{display:inline-flex;gap:2px;align-items:flex-end;height:14px;margin-right:.4rem}.eq i{width:3px;height:4px;background:#c084fc}
+.playing .eq i{animation:eq .8s infinite ease-in-out}.playing .eq i:nth-child(2){animation-delay:.2s}.playing .eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{50%{height:14px}}
+.lyr p{opacity:.3;transition:all .4s;font-size:1.15rem;margin:.6rem 0}.lyr p.on{opacity:1;color:var(--accent);transform:translateX(6px)}
+.chat{max-width:460px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--card);box-shadow:0 10px 30px rgba(109,40,217,.15)}
+.chh{display:flex;gap:.7rem;align-items:center;padding:.7rem 1rem;background:linear-gradient(135deg,var(--accent),#6d28d9);color:#fff}.chh small{opacity:.8}.chh button{margin-left:auto}
+.chb{height:380px;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.5rem;background:var(--soft)}
+.msg{align-self:flex-end;max-width:82%;background:linear-gradient(135deg,var(--accent),#6d28d9);color:#fff;border-radius:16px 16px 4px 16px;padding:.5rem .8rem;animation:pop .25s}
+.msg small{display:block;text-align:right;opacity:.7;font-size:.7rem}.msg.ty{background:var(--card);color:var(--muted)}
+#mz{width:100%;max-width:270px;height:auto;aspect-ratio:1;border-radius:14px;touch-action:none}
+.dp{display:flex;flex-direction:column;align-items:center;gap:4px;margin:.7rem 0}.dp div{display:flex;gap:4px}
+.dp button{width:46px;height:46px;border-radius:12px;border:2px solid var(--line);background:var(--soft);color:var(--text);cursor:pointer}
+.ticket{display:flex;max-width:520px;margin:0 auto;border-radius:18px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 10px 30px rgba(109,40,217,.18);text-align:left}
+.tk-l{flex:1;padding:1rem 1.2rem;border-right:2px dashed var(--accent2)}.tk-l small,.tk-r small{color:var(--muted);letter-spacing:.12em;font-size:.65rem}
+.tk-l b{display:block;font-size:1.2rem;color:var(--accent)}
+.route{display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;font-size:.75rem;gap:.4rem}
+.tk-r{padding:1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;text-align:center}
+.bc{width:56px;height:70px;background:repeating-linear-gradient(90deg,var(--text) 0 2px,transparent 2px 5px,var(--text) 5px 6px,transparent 6px 9px)}
+.idc{width:min(340px,100%);margin:0 auto;border-radius:20px;padding:1.1rem;color:#fff;text-align:left;background:linear-gradient(135deg,#4c1d95,#8b5cf6 55%,#c084fc);position:relative;overflow:hidden;transition:transform .12s;box-shadow:0 14px 34px rgba(109,40,217,.45)}
+.idc::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--x,50%) var(--y,0%),rgba(255,255,255,.45),transparent 45%);pointer-events:none}
+.idc b{font-size:1.4rem;display:block}.idc small{opacity:.8;letter-spacing:.1em}
+.swt{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);cursor:pointer}
+.ck label{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:.3rem .8rem;cursor:pointer}
+#cpf{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:15;width:48px;height:48px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--accent),#6d28d9);color:#fff;font-size:1.2rem;cursor:pointer;box-shadow:0 6px 18px rgba(139,92,246,.5)}body.lock #cpf{display:none}
+#cp{display:none;position:fixed;inset:0;z-index:30;background:rgba(10,4,25,.6);align-items:flex-start;justify-content:center;padding-top:15vh}#cp.open{display:flex}
+.cpb{width:min(420px,92vw);background:var(--card);border:1px solid var(--line);border-radius:18px;padding:.8rem;box-shadow:0 20px 50px rgba(0,0,0,.4)}.cpb input{width:100%}
+#cpl{display:flex;flex-direction:column;margin-top:.5rem;max-height:50vh;overflow:auto}#cpl button{text-align:left;background:none;border:0;color:var(--text);padding:.6rem .7rem;border-radius:10px;cursor:pointer}#cpl button:hover,#cpl button:first-child{background:var(--soft)}
 </style>
 </head>
 <body class="lock">
+<div id="prog"></div>
+<button id="cpf" aria-label="Menu rápido">☰</button>
+<div id="cp"><div class="cpb"><input id="cpi" type="text" placeholder="Ir para…" autocomplete="off"><div id="cpl"></div></div></div>
 <canvas id="bg"></canvas>
 <header>
 <div class="moon">🌙</div>
@@ -95,6 +137,49 @@ footer{text-align:center;color:var(--muted);padding:2rem 1rem 3rem}
 </div>
 </section>
 <section>
+<h2>🎧 Tocando agora</h2>
+<p class="sub">Aperte o play e acompanhe.</p>
+<div class="two">
+<div class="phone" id="ph">
+<div style="display:flex;justify-content:space-between;font-size:.7rem;opacity:.7"><span>9:41</span><span>▂▄▆ 5G</span></div>
+<div style="margin-top:.6rem;font-size:.65rem;letter-spacing:.12em;opacity:.8"><span class="eq"><i></i><i></i><i></i></span>TOCANDO AGORA</div>
+<div class="cover">💜</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:.9rem"><div style="text-align:left"><b>em uma viela, no beco “sem” saída</b><br><small style="opacity:.7">para a Lele</small></div><button id="lk" aria-label="Curtir">♡</button></div>
+<div class="pb" id="pb"><i id="pi"></i></div>
+<div style="display:flex;justify-content:space-between;font-size:.7rem;opacity:.7"><span id="t1">0:00</span><span>3:35</span></div>
+<div class="ctl"><button aria-label="Aleatório">🔀</button><button id="pv" aria-label="Anterior">⏮</button><button class="pp" id="pp" aria-label="Tocar">▶</button><button id="nx" aria-label="Próxima">⏭</button><button aria-label="Repetir">🔁</button></div>
+</div>
+<div class="card lyr"><small class="sub" style="letter-spacing:.12em">DEDICATÓRIA SINCRONIZADA</small><div id="ly"></div></div>
+</div>
+</section>
+<section>
+<h2>💬 Nossos bordões</h2>
+<div class="chat"><div class="chh"><span style="font-size:1.6rem">💜</span><div><b>Bordões</b><br><small>online</small></div><button class="tab" id="chr" aria-label="Repetir">↻</button></div><div class="chb" id="chb"></div></div>
+</section>
+<section>
+<div class="two">
+<div class="card" style="text-align:center"><h2>🧩 Um beco com saída</h2><p class="sub">A música errou: nesse beco tem saída. Leve o 💜 até a porta.</p><canvas id="mz" width="270" height="270"></canvas><div class="big" id="mzm" style="min-height:2.4em"></div>
+<div class="dp"><button data-d="0">▲</button><div><button data-d="3">◀</button><button data-d="2">▼</button><button data-d="1">▶</button></div></div><button class="btn" id="mzr">Novo beco</button></div>
+<div class="card" style="text-align:center"><h2>🏃 Me pega, se for capaz</h2><p class="sub">Tente clicar no botão.</p><div id="rua" style="position:relative;height:150px"><button class="btn" id="rub" style="position:absolute;left:calc(50% - 50px);top:55px">Pegar 🏃</button></div><div class="big" id="rum"></div></div>
+</div>
+</section>
+<section>
+<div class="two">
+<div class="ticket" id="tk"><div class="tk-l"><small>PASSAGEM • IDA E VOLTA</small><b>Não sou a Ortiz</b><span class="sub">mas se ficar comigo, você volta feliz</span><div class="route"><div>QUALQUER<br>LUGAR</div><div>🚌 ➜ 💜</div><div>COMIGO<br>VOLTA FELIZ</div></div></div><div class="tk-r"><div class="bc"></div><small>ASSENTO 1A<br>LELE</small></div></div>
+<div class="idc" id="idc"><small>CARTEIRINHA OFICIAL</small><b>Vagabundo</b><div style="margin:.5rem 0">Categoria: também ama</div><small>VALIDADE: PARA SEMPRE ✦ Nº 0001</small></div>
+</div>
+</section>
+<section>
+<div class="card" style="text-align:center">
+<h2>🏠 Gostou da casa nova?</h2>
+<p class="sub">Ela mora na minha mente. Escolha a decoração.</p>
+<svg id="rm" viewBox="0 0 320 200" style="width:100%;max-width:440px;border-radius:16px"><rect id="rw" width="320" height="140" fill="#c4b5fd"/><rect id="rf" y="140" width="320" height="60" fill="#8b6f4e"/><rect x="40" y="30" width="70" height="60" rx="6" fill="#bfe3ff" stroke="#fff" stroke-width="4"/><g font-size="34" text-anchor="middle"><text id="i_sofa" x="150" y="150">🛋️</text><text id="i_plant" x="280" y="150">🪴</text><text id="i_luz" x="230" y="60">💡</text><text id="i_quadro" x="170" y="80">🖼️</text><text id="i_gato" x="95" y="175">🐱</text><text id="i_vela" x="60" y="175">🕯️</text></g></svg>
+<div class="row" style="margin-top:.8rem">Parede <span id="rwc" class="row"></span> Piso <span id="rfc" class="row"></span></div>
+<div class="row ck" id="ri" style="margin-top:.7rem"><label><input type="checkbox" value="sofa" checked> 🛋️ Sofá</label><label><input type="checkbox" value="plant" checked> 🪴 Planta</label><label><input type="checkbox" value="luz" checked> 💡 Luz</label><label><input type="checkbox" value="quadro"> 🖼️ Quadro</label><label><input type="checkbox" value="gato"> 🐱 Gato</label><label><input type="checkbox" value="vela"> 🕯️ Vela</label></div>
+<p><button class="btn" id="rok">Aprovar decoração</button></p><div class="big" id="rmm"></div>
+</div>
+</section>
+<section>
 <div class="card" style="text-align:center">
 <h2>🌌 Sua constelação</h2>
 <p class="sub">Toque no céu para acender estrelas e desenhar uma constelação só sua.</p>
@@ -102,7 +187,7 @@ footer{text-align:center;color:var(--muted);padding:2rem 1rem 3rem}
 </div>
 </section>
 </main>
-<footer id="ft" hidden>Feito com carinho e muito roxo 💜</footer>
+<footer id="ft" hidden>Feito com carinho e muito roxo 💜<br><small>Dica: aperte / ou Ctrl+K para navegar</small></footer>
 <script>
 const $=s=>document.querySelector(s);
 const sv=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
@@ -181,6 +266,59 @@ function skr(){sk.width=sk.clientWidth;sk.height=260;skd()}
 sk.onpointerdown=e=>{const r=sk.getBoundingClientRect();pts.push([e.clientX-r.left,e.clientY-r.top]);skd()};
 $('#skc').onclick=()=>{pts=[];skd()};
 addEventListener('resize',skr);skr();
+
+// player
+const LY=['amor, a música tá errada, é numa viela no beco TEM saída…','mesmo assim adoro quando você canta…','adoro quando você ri e amo estar contigo,','não sou o homem que você sonhava, mas posso ser o que você sonhará,','engoliria mil vezes minha vaidade pra dizer “volta pra mim”;','a verdade é que contigo me sinto o mais forte e o mais fraco do mundo ao mesmo tempo,','e é muito bom.'];
+$('#ly').innerHTML=LY.map(l=>'<p>'+l+'</p>').join('');
+let isP=false,pt=0,pv;const TT=215,fmt=t=>(t/60|0)+':'+String(t%60|0).padStart(2,'0');
+function pu(){const f=pt/TT;$('#pi').style.width=f*100+'%';$('#t1').textContent=fmt(pt);const k=Math.min(LY.length-1,Math.floor(f*LY.length));document.querySelectorAll('#ly p').forEach((p,i)=>p.classList.toggle('on',pt>0&&i==k))}
+function stp(){isP=false;clearInterval(pv);$('#pp').textContent='▶';$('#ph').classList.remove('playing')}
+$('#pp').onclick=()=>{if(isP){stp();return}isP=true;$('#pp').textContent='⏸';$('#ph').classList.add('playing');pv=setInterval(()=>{pt+=1.25;if(pt>=TT){pt=0;stp()}pu()},250)};
+$('#nx').onclick=$('#pv').onclick=()=>{pt=0;pu()};
+$('#pb').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();pt=(e.clientX-r.left)/r.width*TT;pu()};
+$('#lk').onclick=function(){this.textContent=this.textContent=='♡'?'💜':'♡'};
+// chat
+const M=['sua mãe vai me amar ainda','escapou kssk','não sou a Ortiz, mas se ficar comigo você volta feliz','gostou da tua casa nova, gostosa? tá morando na minha mente','vagabundo também ama','estou numa viela, num beco sem saída','escolhe minha decoração nova','finge que tá respirando','n vai doer, amor, deixa eu tirar teu cravo','conta uma história pra eu dormir','posso te ligar?','manda foto do trajeto'];
+let ct;function chat(){clearTimeout(ct);const b=$('#chb');b.innerHTML='';let i=0;const nx=()=>{if(i>=M.length)return;const ty=document.createElement('div');ty.className='msg ty';ty.textContent='digitando…';b.appendChild(ty);b.scrollTop=1e5;ct=setTimeout(()=>{ty.remove();const m=document.createElement('div');m.className='msg';m.innerHTML=M[i]+'<small>21:'+(30+i)+' ✓✓</small>';b.appendChild(m);b.scrollTop=1e5;i++;ct=setTimeout(nx,450)},600+M[i].length*16)};nx()}
+$('#chr').onclick=chat;
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){chat();o.disconnect()}},{threshold:.4}).observe($('#chb'));
+// beco
+const N=9,CS=30,mzc=$('#mz'),mx=mzc.getContext('2d');let G,pl;
+function mzNew(){G=Array.from({length:N},()=>Array.from({length:N},()=>({v:0,w:[1,1,1,1]})));const st=[[0,0]];G[0][0].v=1;const D4=[[0,-1,0,2],[1,0,1,3],[0,1,2,0],[-1,0,3,1]];
+while(st.length){const[x,y]=st[st.length-1];const o=D4.filter(([dx,dy])=>{const a=x+dx,b=y+dy;return a>=0&&b>=0&&a<N&&b<N&&!G[b][a].v}).sort(()=>Math.random()-.5);if(!o.length){st.pop();continue}const[dx,dy,a1,a2]=o[0],a=x+dx,b=y+dy;G[y][x].w[a1]=0;G[b][a].w[a2]=0;G[b][a].v=1;st.push([a,b])}
+pl=[0,0];$('#mzm').textContent='';mzd()}
+function mzd(){mx.fillStyle='#12082a';mx.fillRect(0,0,270,270);mx.strokeStyle='#c084fc';mx.lineWidth=2;mx.beginPath();
+G.forEach((r,y)=>r.forEach((c,x)=>{const X=x*CS,Y=y*CS;if(c.w[0]){mx.moveTo(X,Y);mx.lineTo(X+CS,Y)}if(c.w[1]){mx.moveTo(X+CS,Y);mx.lineTo(X+CS,Y+CS)}if(c.w[2]){mx.moveTo(X,Y+CS);mx.lineTo(X+CS,Y+CS)}if(c.w[3]){mx.moveTo(X,Y);mx.lineTo(X,Y+CS)}}));mx.stroke();
+mx.font='20px serif';mx.textAlign='center';mx.textBaseline='middle';mx.fillText('🚪',(N-1)*CS+CS/2,(N-1)*CS+CS/2);mx.fillText('💜',pl[0]*CS+CS/2,pl[1]*CS+CS/2)}
+function mv(d){if(G[pl[1]][pl[0]].w[d])return;pl=[pl[0]+[0,1,0,-1][d],pl[1]+[-1,0,1,0][d]];mzd();if(pl[0]==N-1&&pl[1]==N-1){$('#mzm').textContent='Tem saída sim, amor 💜';for(let i=0;i<10;i++)setTimeout(()=>spark(Math.random()*innerWidth,innerHeight*.6),i*80)}}
+document.querySelectorAll('.dp button').forEach(b=>b.onclick=()=>mv(+b.dataset.d));$('#mzr').onclick=mzNew;
+addEventListener('keydown',e=>{const k={ArrowUp:0,ArrowRight:1,ArrowDown:2,ArrowLeft:3,w:0,d:1,s:2,a:3}[e.key];if(k==null||$('#mn').hidden||document.activeElement.tagName=='INPUT')return;const r=mzc.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;e.preventDefault();mv(k)});
+let sx0,sy0;mzc.onpointerdown=e=>{sx0=e.clientX;sy0=e.clientY};mzc.onpointerup=e=>{const dx=e.clientX-sx0,dy=e.clientY-sy0;if(Math.max(Math.abs(dx),Math.abs(dy))<20)return;mv(Math.abs(dx)>Math.abs(dy)?(dx>0?1:3):(dy>0?2:0))};
+mzNew();
+// escapou
+let ds=0;const rb=$('#rub'),ra=$('#rua');
+function esc(){if(ds>=6)return;ds++;rb.style.left=Math.random()*(ra.clientWidth-rb.offsetWidth)+'px';rb.style.top=Math.random()*(ra.clientHeight-rb.offsetHeight)+'px';$('#rum').textContent=['escapou kssk','quase!','escapou kssk 🏃','tá difícil, né?','escapou kssk','última chance…'][ds-1]}
+rb.onpointerenter=esc;rb.onpointerdown=esc;rb.onclick=()=>{if(ds>=6){$('#rum').textContent='Pegou! Agora não escapa mais 💜';spark(innerWidth/2,innerHeight/2,'🎉')}};
+// carteirinha holografica
+const ic=$('#idc');ic.onpointermove=e=>{const r=ic.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;ic.style.setProperty('--x',x*100+'%');ic.style.setProperty('--y',y*100+'%');ic.style.transform='perspective(600px) rotateY('+(x-.5)*16+'deg) rotateX('+(.5-y)*16+'deg)'};ic.onpointerleave=()=>{ic.style.transform=''};
+// decoracao
+const WC=['#c4b5fd','#f0abfc','#a78bfa','#ede9fe','#4c1d95'],FC=['#8b6f4e','#d6c3a5','#3f2f4f'];
+function sw(id,cols,fn){cols.forEach(c=>{const b=document.createElement('button');b.className='swt';b.style.background=c;b.setAttribute('aria-label','cor '+c);b.onclick=()=>fn(c);$(id).appendChild(b)})}
+sw('#rwc',WC,c=>$('#rw').setAttribute('fill',c));sw('#rfc',FC,c=>$('#rf').setAttribute('fill',c));
+document.querySelectorAll('#ri input').forEach(i=>{i.onchange=()=>{$('#i_'+i.value).style.display=i.checked?'':'none'};i.onchange()});
+$('#rok').onclick=()=>{$('#rmm').textContent='Decoração aprovada. Minha mente nunca esteve tão bonita 💜';for(let i=0;i<10;i++)setTimeout(()=>spark(Math.random()*innerWidth,innerHeight*.5,'✨'),i*80)};
+// navegacao: progresso, reveal, paleta de comandos
+addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;$('#prog').style.width=(h>0?scrollY/h*100:0)+'%'},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('section').forEach(x=>io.observe(x));
+const CM=[['📸 Galeria','#gal'],['🎮 Joguinhos','#p1'],['🎧 Tocando agora','#ph'],['💬 Bordões','#chb'],['🧩 Beco com saída','#mz'],['🏃 Me pega','#rub'],['🚌 Passagem','#tk'],['🪪 Carteirinha','#idc'],['🏠 Decoração','#rm'],['🌌 Constelação','#sky']];
+function cpr(q){const l=$('#cpl');l.innerHTML='';CM.filter(c=>c[0].toLowerCase().includes(q.toLowerCase())).forEach(c=>{const b=document.createElement('button');b.textContent=c[0];b.onclick=()=>{cpc();$(c[1]).scrollIntoView({behavior:'smooth',block:'center'})};l.appendChild(b)})}
+function cpo(){if($('#mn').hidden)return;$('#cp').classList.add('open');$('#cpi').value='';cpr('');$('#cpi').focus()}
+function cpc(){$('#cp').classList.remove('open')}
+$('#cpi').oninput=e=>cpr(e.target.value);$('#cpi').onkeydown=e=>{if(e.key=='Enter'){const b=$('#cpl button');if(b)b.click()}};
+$('#cp').onclick=e=>{if(e.target.id=='cp')cpc()};$('#cpf').onclick=cpo;
+addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key=='k'){e.preventDefault();cpo()}else if(e.key=='Escape')cpc();else if(e.key=='/'&&document.activeElement.tagName!='INPUT'){e.preventDefault();cpo()}});
+console.log('%c💜 feito à mão, com carinho','color:#8b5cf6;font-size:16px;font-weight:bold');
 if(ld('unl')=='1')reveal();
 </script>
 </body>
